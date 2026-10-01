@@ -1,56 +1,45 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>QSAP BSS</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/6/6f/Gemini_Generated_Image_3w0r663w0r663w0r.jpg" />
   <style>
-    html, body, #app {
+    html, body {
+      margin: 0;
+      padding: 0;
       width: 100%;
       height: 100%;
-      margin: 0;
-      border: 0;
+      background-color: #eee;
+      overflow: hidden; /* Mencegah scroll ganda */
     }
 
-    body {
+    .iframe-container {
+      width: 100%;
+      height: 100dvh; /* Menggunakan dvh agar pas di mobile browser */
       overflow: hidden;
-      background: #f1f5f9;
     }
 
-    #loading {
-      position: fixed;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      z-index: 1;
-      font: 600 14px Arial, sans-serif;
-      color: #166534;
-      background: #f8fafc;
-    }
-
-    #app {
-      position: relative;
-      z-index: 2;
+    iframe {
       display: block;
-      height: 100dvh;
+      width: 100%;
+      height: 100%;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <div id="loading">Memuat QSAP…</div>
-
-  <iframe
-    id="app"
-    title="QSAP BSS"
-    src="PASTE_URL_EXEC_LANGSUNG_DARI_DEPLOYMENT_APPS_SCRIPT"
-    allow="camera; microphone; geolocation; fullscreen"
-    allowfullscreen>
-  </iframe>
-
-  <script>
-    document.getElementById('app').addEventListener('load', function () {
-      document.getElementById('loading').style.display = 'none';
-    });
-  </script>
+  <div class="iframe-container">
+    <iframe
+      id="app"
+      src="https://script.google.com/a/~/macros/s/AKfycbyjMjRUnlKDA_G3sqfRd-9l89qXvG10NJPYdG2dAjesDBot6CNDlJt4wtU2q19fS9-vfA/exec"
+      scrolling="yes"
+      allowfullscreen="true"
+      webkitallowfullscreen="true"
+      mozallowfullscreen="true"
+      allow="fullscreen; camera; microphone; display-capture; geolocation;">
+    </iframe>
+  </div>
 </body>
 </html>
